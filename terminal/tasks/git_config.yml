@@ -1,0 +1,18 @@
+---
+- hosts: all
+  gather_facts: false
+  tasks:
+    - name: git config
+      git_config:
+        scope: global
+        name: "{{ item.name }}"
+        value: "{{ item.value }}"
+      loop:
+        - name: user.name
+          value: Kaoru Nagashima
+        - name: user.email
+          value: nkchan0228@gmail.com
+    - name: srcにコピー元を指定
+      copy:
+        src: .gitignore
+        dest:  /home/nkchan/.gitignore_global

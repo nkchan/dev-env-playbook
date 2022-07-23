@@ -1,0 +1,12 @@
+---
+- hosts: all
+  user: root
+  tasks:
+  - name: apt upgrade
+    apt:
+      upgrade: yes
+
+  - name: Install multi packages
+    apt:
+      name:
+        - tmux
