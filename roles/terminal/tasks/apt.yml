@@ -1,0 +1,13 @@
+--- 
+- name: apt upgrade
+  become: yes
+  apt:
+   upgrade: yes
+
+- name: Install multi packages
+  become: yes
+  apt: 
+    name:
+      - tmux
+      - vim
+      - git

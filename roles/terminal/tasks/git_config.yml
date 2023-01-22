@@ -1,0 +1,11 @@
+---
+- name: setup name
+  command:  git config --global user.name "Kaoru Nagashima" 
+
+- name: setup email
+  command: git config --global user.email "nkchan0228@gmail.com" 
+
+- name: srcにコピー元を指定
+  copy:
+    src: .gitignore
+    dest:  /home/nkchan/.gitignore_global
